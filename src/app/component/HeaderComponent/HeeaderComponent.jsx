@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./HeaderComponent.module.css";
-import Cart from "../icons/Cart";
-import Heart from "../icons/HeartIcon";
-import Search from "../icons/Search";
-import Logo from "../icons/Logo";
+import Cart from "../../icons/Cart";
+import Heart from "../../icons/HeartIcon";
+import Search from "../../icons/Search";
+import Logo from "../../icons/Logo";
 
 function HeaderComponent() {
   return (

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import styles from "./ProductList.module.css";
-import { productListResponse } from "./API/Product";
+import styles from "./ProductHome.module.css";
+import { productListResponse } from "../../API/Product";
 import HeaderComponent from "../HeaderComponent/HeeaderComponent";
-// import ProductList from "@/app/components/ProductList/ProductList";
-// import { productListResponse } from "@/app/API/Product";
-// import HeaderComponent from "@/app/components/Header/HeaderComponent/HeaderComponent";
+import ProductList from "../ProductList/ProductList";
 
-export default function ProductList() {
+export default function ProductHome() {
   const [products, setProducts] = useState([]);
 
   const productList = async () => {
@@ -20,8 +18,7 @@ export default function ProductList() {
   return (
     <div className={styles.mainContainer}>
       <HeaderComponent />
-
-      {/* <ProductList products={products} /> */}
+      <ProductList products={products} />
     </div>
   );
 }
