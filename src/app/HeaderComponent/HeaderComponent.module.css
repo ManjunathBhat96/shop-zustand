@@ -1,0 +1,17 @@
+.headerSection {
+  display: flex;
+  margin: 0 20px 20px 0;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+.headerRight {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.favIcon {
+  margin-right: 20px;
+}
+.cartIcon {
+  margin-right: 20px;
+}

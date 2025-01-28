@@ -1,0 +1,6 @@
+.mainContainer {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  margin: 20px;
+}
