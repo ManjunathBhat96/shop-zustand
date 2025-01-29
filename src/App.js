@@ -1,12 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import ProductHome from "./app/component/ProductHome/ProductHome";
+import { Fragment } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <ProductHome />
-    </div>
+    <Routes>
+      {/* <div className="App"> */}
+      <Route path="/" element={<ProductHome />} />
+      <Route path='/productdetail/${id}' element={<ProductHome />} />
+      {/* </div> */}
+    </Routes>
   );
 }
 
