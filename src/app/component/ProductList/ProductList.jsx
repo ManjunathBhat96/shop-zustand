@@ -1,10 +1,11 @@
+import { Router, useNavigate } from "react-router-dom";
 import styles from "./ProductList.module.css";
 
 
-
 function ProductList({ products }) {
+  const navigate = useNavigate();
   const productClick = (id) => {
-    // router.push(`proddetails/${id}`);
+    navigate(`productdetail/${id}`);
   };
 
   return (
