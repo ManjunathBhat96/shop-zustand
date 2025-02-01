@@ -1,16 +1,20 @@
-import React, {useEffect, useState} from "react";
-import styles from './productDetailsContainer.module.css';
+import React, { useEffect, useState } from "react";
+import styles from "./productDetailsContainer.module.css";
 import { productDetailsResponse } from "../../API/ProductDetail";
+import { useLocation } from "react-router-dom";
 
 function ProductDetailsContainer() {
-  // const pathname = usePathname();
+  const location = useLocation();
+
   const [prodDetail, setProdDetail] = useState();
 
   const productdetails = async () => {
-    // if (pathname?.split("/")?.length > 0) { pathname?.split("/")?.[2] ||
-      const result = await productDetailsResponse( 2);
+    if (location?.pathname?.split("/")?.length > 0) {
+      const result = await productDetailsResponse(
+        location?.pathname?.split("/")?.[2]
+      );
       setProdDetail(result.data);
-    // }
+    }
   };
 
   useEffect(() => {
