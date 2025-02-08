@@ -3,13 +3,14 @@ import styles from "./ProductHome.module.css";
 import { productListResponse } from "../../API/Product";
 import HeaderComponent from "../HeaderComponent/HeeaderComponent";
 import ProductList from "../ProductList/ProductList";
+import useStore from "../../store/store";
 
 export default function ProductHome() {
-  const [products, setProducts] = useState([]);
+  const addProducts = useStore((state) => state.addProducts);
 
   const productList = async () => {
     const prodData = (await productListResponse()) || [];
-    setProducts(prodData.data);
+    addProducts(prodData.data);
   };
   useEffect(() => {
     productList();
@@ -18,7 +19,7 @@ export default function ProductHome() {
   return (
     <div className={styles.mainContainer}>
       <HeaderComponent />
-      <ProductList products={products} />
+      <ProductList />
     </div>
   );
 }

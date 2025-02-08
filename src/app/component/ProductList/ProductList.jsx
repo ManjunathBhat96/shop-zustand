@@ -1,13 +1,13 @@
 import { Router, useNavigate } from "react-router-dom";
 import styles from "./ProductList.module.css";
+import useStore from "../../store/store";
 
-
-function ProductList({ products }) {
+function ProductList() {
   const navigate = useNavigate();
   const productClick = (id) => {
     navigate(`productdetail/${id}`);
   };
-
+  const products = useStore((state) => state.products);
   return (
     <div className={styles.listContainer}>
       {products.map((prod) => {
